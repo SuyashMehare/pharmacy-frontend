@@ -8,6 +8,8 @@ import { fetchUserOrderHistory } from "../redux/slices/OrderHistorySlice";
 
 import { useNavigate } from "react-router-dom";
 import { FRONTEND_ROUTES } from "../constants/frontend_urls";
+import { getToken } from "../utils/localStorage";
+import NotLoggedInDialogue from "../components/auth/NotLoggedInDialogue";
 
 const statusConfig = {
     not_initiated: {
@@ -68,17 +70,22 @@ const formatCurrency = (amount) => {
 };
 
 export default function UserOrderHistory() {
+    let token = getToken() || null;
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { loading, error, message, data } = useSelector((state) => state.orderHistory);
 
     useEffect(() => {
-        dispatch(fetchUserOrderHistory());
+        token = getToken();
+
+        if (token !== null)
+            dispatch(fetchUserOrderHistory());
     }, [dispatch]);
 
     const handleViewDetails = (orderId) => {
         navigate('./' + orderId);
     };
+
 
     if (loading) {
         return (
@@ -124,8 +131,20 @@ export default function UserOrderHistory() {
         );
     }
 
+    console.log('token,', token);
+
+    // if (!token)
+    //     return <NotLoggedInDialogue
+    //         message="Please login for Order History!"
+    //     />
+
     return (
         <div className="min-h-screen bg-gray-900 p-6">
+            {
+                (!token && (<NotLoggedInDialogue
+                    message="Please login for Order History!!"
+                />))
+            }
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-2xl font-bold text-white mb-6">Order History</h1>
 

@@ -20,7 +20,9 @@ export const ENDPOINTS = {
     product: {
         user: {
             getAllProducts: PHARMACY_BACKEND + '/users',
-            getSingleProdcut: PHARMACY_BACKEND + '/users/single'
+            getSingleProdcut: PHARMACY_BACKEND + '/users/single',
+            subscribeProduct: PHARMACY_BACKEND + '/users/product/subscribe',
+            unSubscribeProduct: PHARMACY_BACKEND + '/users/product/unsubscribe'
         },
         admin: {
             getAllProducts: PHARMACY_BACKEND + '/admin',

@@ -38,7 +38,7 @@ const AdminLogin = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
-          className="pl-10 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="pl-10 w-full px-4 py-2 text-black border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
       </div>
@@ -53,7 +53,7 @@ const AdminLogin = () => {
           value={formData.password}
           onChange={handleChange}
           placeholder="Password"
-          className="pl-10 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="pl-10 w-full px-4 py-2 text-black border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
       </div>

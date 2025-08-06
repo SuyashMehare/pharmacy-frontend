@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { fetchOrderDetails } from "../redux/slices/OrderHistorySlice";
+import { fetchUserOrderHistory } from "../redux/slices/OrderHistorySlice";
 
 const statusConfig = {
   not_initiated: {
@@ -76,7 +76,7 @@ export default function UserOrderHistoryDetails() {
   console.log(loading, error, message, data);
   
   useEffect(() => {
-    dispatch(fetchOrderDetails(orderId));
+    dispatch(fetchUserOrderHistory(orderId));
   }, [dispatch, orderId]);
 
   if (loading) {
@@ -142,7 +142,7 @@ export default function UserOrderHistoryDetails() {
               Go Back
             </button>
             <button
-              onClick={() => dispatch(fetchOrderDetails(orderId))}
+              onClick={() => dispatch(fetchUserOrderHistory(orderId))}
               className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white font-medium transition"
             >
               Retry
@@ -153,9 +153,7 @@ export default function UserOrderHistoryDetails() {
     );
   }
 
-  if (!order) {
-    {console.log('orders', order);}
-    
+  if (!order) {    
     return (
       <div className="min-h-screen bg-gray-900 p-6 flex items-center justify-center">
         <div className="max-w-md bg-gray-800 rounded-lg shadow-lg p-6 text-center">

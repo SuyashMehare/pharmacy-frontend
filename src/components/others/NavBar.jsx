@@ -36,7 +36,7 @@ const Navbar = () => {
     // Clear user data and redirect
     localStorage.removeItem('role');
     localStorage.removeItem('token');
-    window.location.href = '/login'; // Redirect to login page
+    window.location.href = '/auth'; // Redirect to login page
   };
 
   return (

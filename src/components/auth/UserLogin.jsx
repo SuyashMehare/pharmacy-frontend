@@ -60,13 +60,13 @@ const UserLogin = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
-          className="pl-10 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="pl-10 w-full px-4 py-2 border text-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
       </div>
       
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <div className="absolute inset-y-0 left-0 pl-3 text-black flex items-center pointer-events-none">
           <Lock className="h-5 w-5 text-gray-400" />
         </div>
         <input
@@ -75,7 +75,7 @@ const UserLogin = () => {
           value={formData.password}
           onChange={handleChange}
           placeholder="Password"
-          className="pl-10 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="pl-10 w-full px-4 py-2 text-black border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
       </div>
