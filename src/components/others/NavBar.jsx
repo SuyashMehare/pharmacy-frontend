@@ -61,7 +61,7 @@ const Navbar = () => {
               <>
                 <NavItem href="/products" icon={<Package className="h-5 w-5" />} text="Products" />
                 <NavItem href="/user/cart" icon={<ShoppingCart className="h-5 w-5" />} text="Cart" />
-                <NavItem href={FRONTEND_ROUTES.user_order_history} icon={<Clock className="h-5 w-5" />} text="Orders" />
+                <NavItem href={FRONTEND_ROUTES.admin_exeuctableOrders} icon={<Clock className="h-5 w-5" />} text="Orders" />
                 <NavItem href="/notifications" icon={<Bell className="h-5 w-5" />} text="Notifications" />
                 <NavItem href="/profile" icon={<User className="h-5 w-5" />} text="Profile" />
                 <NavItem href="/upload" icon={<Upload className="h-5 w-5" />} text="Upload Prescription" />
@@ -77,6 +77,7 @@ const Navbar = () => {
                 icon={<LogOut className="h-4 w-4" />}
                 onClick={handleLogout}
                 className="hidden md:block"
+                iconPosition='mid'
               />
             </div>
           </div>
@@ -136,7 +137,6 @@ const Navbar = () => {
                 size="sm"
                 icon={<LogOut className="h-4 w-4" />}
                 onClick={handleLogout}
-                label="Logout"
                 fullWidth
               />
             </div>

@@ -4,16 +4,25 @@ import UserSignup from '../components/auth/UserSignup';
 import UserLogin from '../components/auth/UserLogin';
 import AdminSignup from '../components/auth/AdminSignup';
 import AdminLogin from '../components/auth/AdminLogin.jsx';
+import { getRole } from '../utils/localStorage.js';
+import { useNavigate } from 'react-router-dom';
+import { FRONTEND_ROUTES } from '../constants/frontend_urls.js';
 
 const AuthTabs = () => {
   const [activeTab, setActiveTab] = useState('userLogin');
-
+  const navigation = useNavigate();
   const tabs = [
     { id: 'userLogin', label: 'User Login', icon: <User size={18} /> },
     { id: 'userSignup', label: 'User Signup', icon: <User size={18} /> },
     { id: 'adminLogin', label: 'Admin Login', icon: <Shield size={18} /> },
     { id: 'adminSignup', label: 'Admin Signup', icon: <Shield size={18} /> },
   ];
+
+  if(getRole() == "regular")
+    return navigation('.'+FRONTEND_ROUTES.products);
+  
+  if(getRole() == "admin")
+    return navigation(FRONTEND_ROUTES.admin_dashboard);
 
   return (
     <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-10">
@@ -29,6 +38,7 @@ const AuthTabs = () => {
           </button>
         ))}
       </div>
+      
       
       <div className="p-6">
         {activeTab === 'userLogin' && <UserLogin />}

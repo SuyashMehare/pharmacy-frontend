@@ -36,6 +36,7 @@ export const ENDPOINTS = {
     order: {
         admin: {
             updateOrderStatus: PHARMACY_BACKEND + '/admin/order/status', // :orderId needed
+            fetchExecutableOrders: PHARMACY_BACKEND + '/admin/orders'
         },
         user: {
             createOrder: PHARMACY_BACKEND + '/users/order',

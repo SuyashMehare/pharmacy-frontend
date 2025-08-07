@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Button = ({
   icon,
   type = "button",
-  label = "Button",
+  label,
   variant = "default",
   onClick,
   className = "",
@@ -26,7 +26,7 @@ const Button = ({
   ariaLabel,
 }) => {
   // Base styles
-  const baseStyles = "inline-flex items-center justify-center font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+  const baseStyles = "flex flex-row items-center justify-center font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
   
   // Size variants
   const sizeStyles = {
@@ -98,6 +98,11 @@ const Button = ({
       {resolvedLabel}
       {iconPosition === 'right' && resolvedIcon && (
         <span className={`${size === 'sm' ? 'ml-1.5' : 'ml-2'}`}>
+          {React.cloneElement(resolvedIcon, { size: iconSize[size] })}
+        </span>
+      )}
+      {iconPosition === 'mid' && resolvedIcon && (
+        <span className={`${size === 'sm' ? 'flex justify-center p-2' : 'ml-2'}`}>
           {React.cloneElement(resolvedIcon, { size: iconSize[size] })}
         </span>
       )}
