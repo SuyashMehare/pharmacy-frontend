@@ -1,12 +1,24 @@
-# React + Vite
+# Pharmacy E-commerce Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured online pharmacy platform that helps users find and order medicines. It provides intelligent suggestions based on search history, health reports, and symptoms.
 
-Currently, two official plugins are available:
+> **Backend Source Code**: [pharmacy-backend](https://github.com/SuyashMehare/pharmacy-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About The Project
 
-## Expanding the ESLint configuration
+A smart platform that makes getting the right medicine easier.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Main Features
+
+- **Smart Medicine Suggestions**: Get recommendations based on your health history and symptoms.
+- **Medicine Price Subscription**: Subscribe to a product and get notified on price drops.
+- **Order Management**: Track, abort, or update orders with clear user and admin rights.
+- **Analytics & Reports**: Users can view medicine price history on charts. Admins get detailed reports.
+- **Health Report Insights**: Upload reports for feedback and medicine suggestions from the platform.
+- **Mocked Payment Gateway**: A simulated payment flow to mimic real-world applications.
+- ...and more features coming soon.
+
+## Tech Stack
+
+- **Backend & Database**: Express.js, MongoDB, MongoDB Vector Embeddings
+- **Frontend**: React.js, Redux Toolkit, Tailwind CSS
